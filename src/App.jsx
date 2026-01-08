@@ -1,20 +1,3 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import './App.css';
-
-const AboutPage = () => {
-    const [text, setText] = useState('');
-    const fullText = "空手道 — Путь Пустой Руки";
-
-    useEffect(() => {
-        let i = 0;
-        const timer = setInterval(() => {
-            setText(fullText.slice(0, i));
-            i++;
-            if (i > fullText.length) clearInterval(timer);
-        }, 100);
-        return () => clearInterval(timer);
-    }, []);
 
     return (
         <div className="container">
@@ -107,6 +90,10 @@ const CodePage = () => (
 export default function App() {
     return (
         <Router>
+            <Helmet>
+  <meta name="google-site-verification" content="FCPcmOjgZk1ZM777I1_alQ9W_5u_LVvugCI68uDTbXU" />
+</Helmet>
+
             <nav className="navbar">
                 <Link className="nav-link" to="/">Путь</Link>
                 <Link className="nav-link" to="/belts">Пояса</Link>
